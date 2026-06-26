@@ -1,0 +1,8 @@
+{
+  "favoriteLongshot": { "a": 0, "b": 1.1 },
+  "meta": {
+    "fittedAt": null,
+    "n": 0,
+    "note": "Cold-start seed (mild favorite-longshot). Replaced by scripts/refit.ts once enough resolved markets accumulate."
+  }
+}

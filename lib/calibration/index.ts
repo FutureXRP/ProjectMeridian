@@ -10,8 +10,10 @@
  */
 export * from "./types";
 export * from "./math";
-export { DEFAULT_PARAMS } from "./params";
-export type { CalibrationParams } from "./params";
+export { DEFAULT_PARAMS, mergeParams } from "./params";
+export type { CalibrationParams, DeepPartial } from "./params";
+export { refitFavoriteLongshot } from "./fit";
+export type { FavoriteLongshotFit, ResolvedSample } from "./fit";
 export { calibrate } from "./calibrate";
 export { confidenceScore, gradeFromScore } from "./grade";
 export { favoriteLongshot } from "./corrections/favoriteLongshot";

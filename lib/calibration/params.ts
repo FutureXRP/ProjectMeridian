@@ -65,3 +65,24 @@ export const DEFAULT_PARAMS: CalibrationParams = {
   crossVenue: { tolerance: 0.04, maxDivergence: 0.25, maxPenalty: 0.25 },
   gradeThresholds: { A: 0.85, B: 0.65, C: 0.45 },
 };
+
+export type DeepPartial<T> = {
+  [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];
+};
+
+/**
+ * Merge fitted overrides (e.g. the contents of /data/calibration.json produced
+ * by scripts/refit.ts) onto the cold-start defaults. Each section is flat, so a
+ * shallow per-section merge is sufficient and predictable.
+ */
+export function mergeParams(overrides?: DeepPartial<CalibrationParams>): CalibrationParams {
+  if (!overrides) return DEFAULT_PARAMS;
+  return {
+    favoriteLongshot: { ...DEFAULT_PARAMS.favoriteLongshot, ...overrides.favoriteLongshot },
+    liquidity: { ...DEFAULT_PARAMS.liquidity, ...overrides.liquidity },
+    momentum: { ...DEFAULT_PARAMS.momentum, ...overrides.momentum },
+    baseRate: { ...DEFAULT_PARAMS.baseRate, ...overrides.baseRate },
+    crossVenue: { ...DEFAULT_PARAMS.crossVenue, ...overrides.crossVenue },
+    gradeThresholds: { ...DEFAULT_PARAMS.gradeThresholds, ...overrides.gradeThresholds },
+  };
+}
