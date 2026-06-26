@@ -24,6 +24,12 @@ export default function RootLayout({
               <Link href="/desk" className="hover:text-[var(--text)] transition-colors">
                 Desk
               </Link>
+              <Link
+                href="/methodology"
+                className="hover:text-[var(--text)] transition-colors"
+              >
+                Methodology
+              </Link>
             </nav>
           </div>
         </header>
