@@ -73,6 +73,8 @@ export interface Adjustment {
   confidencePenalty: number;
   /** Plain-language explanation of what this correction saw and did. */
   detail: string;
+  /** Machine-readable flags this correction raised, e.g. "whale_dominated". */
+  flags?: readonly string[];
   /** Raw signal values behind the correction, for full auditability. */
   data?: Record<string, number | string | boolean | null>;
 }
