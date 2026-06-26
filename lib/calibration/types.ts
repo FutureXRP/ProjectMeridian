@@ -86,6 +86,7 @@ export interface Adjustment {
  */
 export interface CalibrationResult {
   marketId: string;
+  question: string;
   venue: Venue;
   rawProbability: number;
   calibratedProbability: number;

@@ -39,6 +39,7 @@ export function calibrate(
 
   return {
     marketId: input.marketId,
+    question: input.question,
     venue: input.venue,
     rawProbability: input.rawProbability,
     calibratedProbability,
